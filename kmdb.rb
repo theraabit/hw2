@@ -128,6 +128,28 @@ person12 = Person.new
 person12.name = "Anne Hathaway"
 person12.save
 
+
+movie1 = Movie.new
+movie1.title = "Batman Begins"
+movie1.year_released = 2005
+movie1.rated = "PG-13"
+movie1.person_id = person1.id
+movie1.save
+
+movie2 = Movie.new
+movie2.title = "The Dark Knight"
+movie2.year_released = 2008
+movie2.rated = "PG-13"
+movie2.person_id = person1.id
+movie2.save
+
+movie3 = Movie.new
+movie3.title = "The Dark Knight Rises"
+movie3.year_released = 2012
+movie3.rated = "PG-13"
+movie3.person_id = person1.id
+movie3.save
+
 # Prints a header for the movies output
 puts "Movies"
 puts "======"
