@@ -17,4 +17,3 @@ group :development do
   gem "tabulo"
   gem "web-console"
 end
-
