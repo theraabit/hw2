@@ -128,7 +128,6 @@ person12 = Person.new
 person12.name = "Anne Hathaway"
 person12.save
 
-
 movie1 = Movie.new
 movie1.title = "Batman Begins"
 movie1.year_released = 2005
@@ -248,6 +247,12 @@ puts ""
 # Query the movies data and loop through the results to display the movies output
 # TODO!
 
+movies = Movie.all
+for movie in movies
+    movie_details = "#{movie.title} #{movie.year_released} #{movie.rated} #{movie.person.name}"
+    puts movie_details
+end
+
 # Prints a header for the cast output
 puts ""
 puts "Top Cast"
@@ -256,3 +261,13 @@ puts ""
 
 # Query the cast data and loop through the results to display the cast output for each movie
 # TODO!
+
+roles = Role.all
+people = Person.all
+
+for movie in movies
+    roles_in_movie = Role.where ({movie_id: movie.id})
+    for role in roles_in_movie
+        puts "#{movie.title} #{role.person.name} #{role.character_name}"
+    end
+end
